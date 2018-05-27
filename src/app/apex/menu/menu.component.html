@@ -1,0 +1,5 @@
+<mat-nav-list style="padding-bottom: 60px;">
+  <mat-list-item *ngFor="let item of menuList"  (click)="navigate(item)"  [ngClass]="{ 'activatedObject': activeMenuObject == item.name }" >
+      <a class="nav-links" routerLink="{{item.link}}" routerLinkActive="active-link"> {{item.name}} </a>
+  </mat-list-item>
+</mat-nav-list>

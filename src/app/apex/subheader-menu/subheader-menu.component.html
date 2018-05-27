@@ -1,0 +1,38 @@
+<!-- <div fxLayout="row" fxLayoutAlign="space-between center" style="background-color: #FAFAFA;height: 50px;">
+
+  <div fxLayoutAlign="space-around center">
+
+    <mat-list-item (click)="logout()">
+   
+    </mat-list-item>
+  </div>
+</div> -->
+<!-- <div fxLayout="row" fxLayoutAlign="start center">
+  <mat-nav-list style="padding-bottom: 60px;">
+    <mat-list-item *ngFor="let item of menuList" (click)="navigate(item)" [ngClass]="{ 'activatedObject': activeMenuObject == item.name }">
+      <a class="nav-links" routerLink="{{item.link}}" routerLinkActive="active-link"> {{item.name}} </a>
+    </mat-list-item>
+  </mat-nav-list>
+   
+</div> -->
+<!-- <ul class='container float even'>
+    <li>
+
+      Configuration
+    </li>
+    <li>
+      Loyalty Management
+    </li>
+    <li>Manage Users</li>
+    <li>Manage Members</li>
+    <li>Coupon Management</li>
+    <li>Campaign Management</li>
+    <li>Others</li>
+    <li>Advisory</li>
+    <li>Reports</li>
+</ul> -->
+
+<mat-tab-group [disableRipple]="true" [color]="none" [backgroundColor]="transparent">
+  <mat-tab *ngFor="let item of menuList" label="{{item.name}}" fxLayoutAlign="space-between center" >
+    </mat-tab>
+  </mat-tab-group>

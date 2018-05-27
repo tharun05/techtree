@@ -1,0 +1,26 @@
+ul.float {
+    overflow: auto;
+}
+ul.float > li {
+    float: left;
+}
+.centered > ul.float > li {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+ul.float.even > li {
+    width: 10%;
+}
+ul.float {
+    overflow: auto;
+}
+ul.inline {
+    word-spacing: -0.3em;
+}
+.centered ul.table > li {
+    padding-left: 1em;
+    padding-right: 1em;    
+}
+ul li{
+    list-style: none;
+}

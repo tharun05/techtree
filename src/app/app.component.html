@@ -1,0 +1,30 @@
+<app-header></app-header>
+        
+<app-subheader-menu></app-subheader-menu>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [mode]="navMode" opened="true" style="background-color: #30373E;height: 100vh;width: 240px;">
+         
+        <app-menu></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-fab-container">
+            <mat-toolbar color="primary" class="header" style="background-color: #ffffff;height:60px !important; border-bottom: 1px solid #c6d0da;" fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <!-- <span> <mat-icon class="md-24" style="color:black">keyboard_arrow_left</mat-icon></span> -->
+                    <span>
+                        <button mat-icon-button (click)="sidenav.toggle()" style="width:60px;height:60px;margin-left:-16px;border-radius:0%">
+                            <mat-icon class="md-24" style="color:black">menu</mat-icon>
+                        </button> 
+                    </span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <!-- <span matTooltip="A" matTooltipPosition="below" fxLayoutAlign="center center" class="my-link"  [matMenuTriggerFor]="menu" style="color:black">A</span> -->
+                    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                        <button mat-menu-item >My Profile</button>
+                        <button mat-menu-item >Change Password</button>                
+                    </mat-menu>
+                </div>
+            </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>    

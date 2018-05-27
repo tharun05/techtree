@@ -1,0 +1,51 @@
+<aside>
+    <main>
+          <form fxLayout="row wrap" fxLayoutAlign="center center">
+            <mat-card fxFlex="100" style="padding:5px;">
+              <mat-card-header>
+                <h4 class="padding text-center">Add User</h4>
+              </mat-card-header>
+              <mat-card-content>
+                <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+  
+                  <mat-form-field fxFlex="25" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                    <input matInput placeholder="ID" required [(ngModel)]="user.id" [ngModelOptions]="{standalone: true}">
+                  
+                  </mat-form-field>
+                  <mat-form-field>
+                      <mat-select placeholder="Type" [(ngModel)]="user.type" [ngModelOptions]="{standalone: true}">
+                        <mat-option *ngFor="let item of types" [value]="item.value" >
+                          {{ item.modal }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field fxFlex="25" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                        <input matInput placeholder="Name" required [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}">
+                      
+                      </mat-form-field>
+                      <mat-form-field>
+                          <mat-select placeholder="Status" [(ngModel)]="user.status" [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let item of status" [value]="item.value">
+                              {{ item.modal }}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="end center">
+                  <div class="padding">
+                    <button fxFlex="100" style="width:100px;height:40px;color:#fff;background-color:#373F4C;border-style:none;"
+                   (click)="addUser(user)">ADD USER</button>
+                  </div>
+                  <div class="padding">
+                      <button fxFlex="100" style="width:100px;height:40px;color:#fff;background-color:#373F4C;border-style:none;"
+                      (click)="reserUser()">RESET USER</button>
+                    </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </form>
+          <mat-card>
+            <app-table [users]="users"></app-table>
+          </mat-card>
+    </main>
+  </aside>
